@@ -1,0 +1,19 @@
+<head>
+    <meta charset="UTF-8">
+    <title>bookform</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+<h1>Book Form</h1>
+    <label for="uname"><b>Book Name</b></label>
+        <input type="text" placeholder="Enter Book Name" name="bookname" required>
+
+        <label for="uname"><b>Author Name</b></label>
+        <input type="text" placeholder="Enter Book Author" name="authorname" required>
+
+        <label for="psw"><b>Number</b></label>
+        <input type="text" placeholder="Enter number of books" name="number" required>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>

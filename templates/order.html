@@ -1,0 +1,51 @@
+{% extends 'admin.html' %}
+{% block content %}
+
+<h1>Search</h1>
+<form method ='POST'>{% csrf_token %}
+    <label for="bname"><b>Student Name</b></label>
+    <input type="text" placeholder="Enter studentname" name="username" required>
+    <label for="bname"><b>Book Name</b></label>
+    <input type="text" placeholder="Enter bookname" name="bookname" required>
+
+
+<!--    <button type="submit">Issue</button>-->
+<!--    <input name="issue" hidden>-->
+<!--</form>-->
+<!--&lt;!&ndash;<form method ='POST'>{% csrf_token %}&ndash;&gt;-->
+<!--    <button type="submit">Return</button>-->
+<!--    <input name="delete" hidden>-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+
+
+
+    <td><input type="submit" value="issue" name="issue"></td>
+    <td><input type="submit" value="return" name="return"></td>
+</tr>
+
+
+        <br>
+<table style="width:100%" border="1">
+
+        <tr>
+            <th>Student Name</th>
+            <th>Book Name</th>
+            <th>Issue date</th>
+            <th>Return date</th>
+            <th>Fine</th>
+        </tr>
+        {% for i in key %}
+        <tr>
+            <td>{{i.username}}</td>
+            <td>{{i.BookName}}</td>
+            <td>{{i.issuedate}}</td>
+            <td>{{i.returndate}}</td>
+            <td>{{i.fine}}</td>
+
+        </tr>
+        {% endfor %}
+</table>
+
+{{ key1 }}
+{% endblock %}

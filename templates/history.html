@@ -1,0 +1,27 @@
+{% extends 'admin.html' %}
+{% block content %}
+
+<h1>History</h1>
+<table style="width:100%" border="1">
+
+        <tr>
+            <th>Student Name</th>
+            <th>Book Name</th>
+            <th>Issue date</th>
+            <th>Return date</th>
+            <th>Fine</th>
+        </tr>
+        {% for i in key %}
+        <tr>
+            <td>{{i.username}}</td>
+            <td>{{i.BookName}}</td>
+            <td>{{i.issuedate}}</td>
+            <td>{{i.returndate}}</td>
+            <td>{{i.fine}}</td>
+
+        </tr>
+        {% endfor %}
+</table>
+
+
+{% endblock %}

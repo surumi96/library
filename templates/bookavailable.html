@@ -1,0 +1,35 @@
+{% extends 'studentadmin.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Books</h1>
+<br>
+<table style="width:100%" border="1">
+    <tr>
+        <th>Book id</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Number</th>
+
+    </tr>
+    {% for i in key %}
+    <tr>
+
+    <td>{{i.id}}</td>
+        <td>{{i.BookName}}</td>
+    <td>{{i.AuthorName}}</td>
+    <td>{{i.Number}}</td>
+
+
+    </tr>
+    {% endfor %}
+    <body>
+
+</body>
+</html>
+{% endblock %}

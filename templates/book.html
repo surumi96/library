@@ -1,0 +1,47 @@
+{% extends 'admin.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Books</h1>
+<form method="post">{% csrf_token %}
+    <input type="submit" name="add" value="Add books" style="float: right;">
+</form>
+<br>
+<table style="width:100%" border="1">
+    <tr>
+        <th>Book id</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Number</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    {% for i in key %}
+    <tr>
+
+    <td>{{i.id}}</td>
+        <td>{{i.BookName}}</td>
+    <td>{{i.AuthorName}}</td>
+    <td>{{i.Number}}</td>
+        <td><form method ='post'>{% csrf_token %}
+            <button type="submit">Delete</button>
+            <input name="delete" value="{{i.id}}" hidden>
+        </form>
+        </td>
+        <td>
+            <a href="/library/editbook/{{i.id}}/">
+            <button type="submit">Edit</button>
+                </a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</body>
+</html>
+{% endblock %}
